@@ -6,7 +6,8 @@ import numpy as np
 from qpac.qeq import charge_eq
 from qpac.utils import addPeriodicity
 
-mol = read("W6.xyz",format="extxyz")
-qe = charge_eq(mol,radius_type="rcov",periodic=False)
+mol = read("NaCltrain2.xyz@0",format="extxyz")
+qe = charge_eq(mol,radius_type="rcov",scale_atsize=0.6,periodic=False)
 A = qe.get_A()
 print(A*Hartree)
+
